@@ -1,0 +1,522 @@
+/* --- Premium Theme Setup & Variables --- */
+[data-theme="light"] {
+    --bg-main: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-surface-gradient: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --primary-accent: #2563eb; /* Royal Corporate Blue */
+    --accent-glow: rgba(37, 99, 235, 0.15);
+    --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    --border-light: rgba(15, 23, 42, 0.05);
+    --glass-nav: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="dark"] {
+    --bg-main: #090d16;
+    --bg-surface: #111827;
+    --bg-surface-gradient: linear-gradient(180deg, #111827 0%, #0b0f19 100%);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --primary-accent: #38bdf8; /* Soft Electric Cyan */
+    --accent-glow: rgba(56, 189, 248, 0.2);
+    --card-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    --border-light: rgba(255, 255, 255, 0.05);
+    --glass-nav: rgba(9, 13, 22, 0.8);
+}
+
+/* --- Core Configuration --- */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    padding-bottom: 85px; 
+}
+@media (min-width: 768px) { body { padding-bottom: 0; padding-top: 80px; } }
+
+.py-6 { padding: 90px 0; }
+.text-secondary-custom { color: var(--text-secondary); }
+.bg-gradient-section { background: var(--bg-surface-gradient); }
+.fw-extrabold { font-weight: 800; }
+
+/* --- Section Tags --- */
+.section-tag {
+    background: var(--accent-glow);
+    color: var(--primary-accent);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+/* --- Floating Navigation Architecture --- */
+.navbar {
+    background: var(--glass-nav);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+.navbar-brand { font-weight: 800; color: var(--text-primary); font-size: 1.6rem; }
+.navbar-brand span { color: var(--primary-accent); }
+.nav-link { color: var(--text-secondary); font-weight: 600; margin: 0 4px; border-radius: 8px; transition: 0.3s; }
+.nav-link:hover { color: var(--primary-accent); background: var(--accent-glow); }
+
+.mobile-top-bar {
+    background: var(--glass-nav);
+    backdrop-filter: blur(12px);
+    z-index: 1030;
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* --- Hero & Profile Glow Mechanics --- */
+.badge-hero {
+    background: var(--border-light);
+    border: 1px solid var(--border-light);
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary-accent) 0%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.profile-glow-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+.profile-glow-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    background: var(--primary-accent);
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.25;
+    z-index: 1;
+}
+.profile-img-container {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    border: 6px solid var(--bg-surface);
+    box-shadow: var(--card-shadow);
+}
+.profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- Buttons --- */
+.btn-primary-custom {
+    background: var(--primary-accent);
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--accent-glow);
+    transition: 0.3s;
+    border: none;
+}
+.btn-primary-custom:hover { transform: translateY(-2px); opacity: 0.9; }
+.btn-secondary-custom {
+    background: transparent;
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    transition: 0.3s;
+}
+.btn-secondary-custom:hover { background: var(--border-light); }
+
+/* --- Skill Badges & Timelines --- */
+.skill-badge {
+    background: var(--bg-surface);
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--card-shadow);
+}
+.modern-timeline { border-left: 3px solid var(--border-light); padding-left: 25px; position: relative; }
+.timeline-block { position: relative; margin-bottom: 35px; }
+.timeline-block::before {
+    content: '';
+    position: absolute;
+    width: 14px; height: 14px;
+    background: var(--primary-accent);
+    border: 3px solid var(--bg-main);
+    border-radius: 50%;
+    left: -33px; top: 6px;
+    box-shadow: 0 0 10px var(--primary-accent);
+}
+.time-badge { font-size: 0.75rem; background: var(--accent-glow); color: var(--primary-accent); padding: 4px 10px; border-radius: 6px; font-weight: 700; display: inline-block; margin-bottom: 6px; }
+
+/* --- Premium Cards Design --- */
+.premium-card, .cert-modern-card, .direct-link-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    height: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.premium-card:hover, .cert-modern-card:hover { transform: translateY(-6px); border-color: var(--primary-accent); }
+
+.card-icon-wrapper { width: 50px; height: 50px; background: var(--accent-glow); color: var(--primary-accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+.tech-pill { background: var(--bg-main); color: var(--text-secondary); padding: 6px 14px; border-radius: 8px; font-weight: 600; margin-right: 6px; }
+
+/* --- Certification Mechanics --- */
+.cert-icon-box { font-size: 2.2rem; color: var(--primary-accent); margin-bottom: 15px; }
+.badge-status { background: #dcfce7; color: #15803d; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 30px; display: inline-block; margin: 8px 0 20px 0; }
+.status-blue { background: #e0f2fe; color: #0369a1; }
+.status-gold { background: #fef3c7; color: #b45309; }
+.cert-footer { border-top: 1px solid var(--border-light); padding-top: 12px; font-size: 0.8rem; color: var(--text-secondary); font-weight: 500; }
+
+/* --- Language Circle Mechanics --- */
+.lang-circle-wrapper {
+    background: var(--bg-surface);
+    border: 2px dashed var(--border-light);
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: var(--card-shadow);
+}
+
+/* --- Contact Tiles Configuration --- */
+.direct-link-card { text-align: center; display: block; }
+.direct-link-card:hover { transform: translateY(-4px); background: var(--accent-glow); border-color: var(--primary-accent); }
+.link-icon { font-size: 2.2rem; color: var(--primary-accent); margin-bottom: 10px; }
+.link-detail { font-weight: 600; color: var(--primary-accent); font-size: 0.95rem; }
+
+/* --- Theme Mode Icon Toggle --- */
+.theme-toggle-btn { background: var(--border-light); color: var(--text-primary); border-radius: 50%; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border: none; }
+
+/* --- Premium UX Mobile Navigation Bottom Bar --- */
+.premium-bottom-bar {
+    background: var(--glass-nav);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-light);
+    padding: 12px 10px;
+    z-index: 1040;
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.06);
+    border-radius: 24px 24px 0 0;
+}
+.bottom-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 60px;
+}
+.bottom-nav-link i { font-size: 1.4rem; margin-bottom: 2px; opacity: 0.7; transition: 0.3s; }
+.bottom-nav-link.active { color: var(--primary-accent); transform: translateY(-4px); }
+.bottom-nav-link.active i { opacity: 1; color: var(--primary-accent); }
+
+/* --- Premium Footer Styling --- */
+.premium-footer {
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-light);
+    position: relative;
+    z-index: 10;
+}
+.footer-logo {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+}
+.footer-logo span {
+    color: var(--primary-accent);
+}
+.credits-box {
+    display: inline-block;
+    background: var(--bg-main);
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .credits-box { text-align: right; }
+}
+.developer-name {
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+}
+.footer-divider {
+    border-color: var(--border-light);
+    opacity: 0.1;
+}
+.extra-small {
+    font-size: 0.8rem;
+}
+
+/* --- Premium Cursive Signature Logo --- */
+.navbar-brand-casio, .mobile-logo-casio, .footer-logo-casio {
+    font-family: 'Alex Brush', cursive; /* அழகான ஆங்கிலக் கூட்டெழுத்து */
+    font-weight: 700;
+    font-size: 2.3rem;            /* கூட்டெழுத்து என்பதால் அளவு சற்று பெரியதாக இருந்தால் தான் அழகாக இருக்கும் */
+    letter-spacing: 1px;          /* சிக்னேச்சருக்கு அதிக இடைவெளி தேவையில்லை */
+    color: var(--primary-accent); /* தீமிற்கு ஏற்ப மாறும் (அல்லது #d4af37 போன்ற Gold கலரையும் பயன்படுத்தலாம்) */
+    text-transform: none;         /* கூட்டெழுத்திற்கு Capital Letters தேவையில்லை, இயல்பாக இருக்கும் */
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+/* டெஸ்க்டாப் லோகோ ஹோவர் எஃபெக்ட் */
+.navbar-brand-casio:hover {
+    color: #a855f7; /* ஹோவர் செய்யும்போது மெரூன் அல்லது பர்பிள் ஷேடிற்கு மாறும் */
+    transform: rotate(-3px) scale(1.05); /* சிக்னேச்சர் லைட்டாக சாய்வது போன்ற ஒரு ஸ்டைல் */
+}
+
+/* மொபைல் மற்றும் ஃபூட்டருக்கான கச்சிதமான அளவுகள் */
+.mobile-logo-casio {
+    font-size: 2rem;
+}
+
+.footer-logo-casio {
+    font-size: 2.1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Different & Modern Footer Layout --- */
+.modern-footer-different {
+    background: var(--bg-main);
+    position: relative;
+    z-index: 10;
+    padding-top: 60px;
+}
+
+/* ஒரு பெரிய கார்டு போல ஃபூட்டரை மாற்றுதல் */
+.footer-wrapper-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: var(--card-shadow);
+}
+
+.footer-subtext {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* நடுக்கோடு அல்லது புள்ளி அலங்காரம் */
+.footer-center-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--primary-accent);
+    opacity: 0.6;
+}
+
+/* Unique Floating Developer Card (உங்களுடைய பெயர் கார்டு) */
+.developer-floating-card {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-surface) 100%);
+    border: 1px dashed var(--primary-accent);
+    padding: 14px 24px;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+@media (min-width: 768px) {
+    .developer-floating-card { text-align: right; }
+}
+.developer-floating-card:hover {
+    transform: scale(1.03) rotate(1deg);
+    border-style: solid;
+    box-shadow: 0 8px 20px var(--accent-glow);
+}
+
+.dev-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.dev-name {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+.text-gradient-icon {
+    color: var(--primary-accent);
+    font-size: 1.1rem;
+}
+
+/* Bottom Copyright Section */
+.footer-bottom-line {
+    border-top: 1px solid var(--border-light);
+    margin-top: 35px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-copyright-text {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
+
+/* மொபைல் பாட்டம் பாரில் உள்ள அனைத்து அண்டர்லைன்களையும் நீக்குவதற்கு */
+.premium-bottom-bar .bottom-nav-link, 
+.navbar .nav-link, 
+a { 
+    text-shadow: none !important;
+    text-decoration: none !important; /* இது அண்டர்லைனை முழுமையாக நீக்கிவிடும் */
+}
+
+/* ஹோவர் செய்யும் போதும் அல்லது ஆக்டிவ் ஆக இருக்கும் போதும் அண்டர்லைன் வராமல் தடுக்க */
+.premium-bottom-bar .bottom-nav-link:hover,
+.premium-bottom-bar .bottom-nav-link:focus,
+.premium-bottom-bar .bottom-nav-link.active {
+    text-decoration: none !important;
+}
+
+
+
+
+
+
+
+
+/* --- 1. பக்கவாட்டு ஸ்க்ரோலை (Ugly Horizontal Scroll) முழுமையாக நீக்க --- */
+html, body {
+    overflow-x: hidden; /* திரையை விட்டு வெளியே போகும் பகுதிகளை மறைத்துவிடும் */
+    scroll-behavior: smooth; /* லிங்க்குகளை கிளிக் செய்யும்போது மென்மையாக ஸ்க்ரோல் ஆகும் */
+}
+
+/* --- 2. மெயின் வெர்டிகல் ஸ்க்ரோல்பாரை பிரீமியமாக மாற்ற (Custom Scrollbar) --- */
+/* ஸ்க்ரோல்பாரின் மொத்த அகலம் */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px; /* மொபைல் அல்லது ஏதேனும் கிடைமட்ட ஸ்க்ரோல் வந்தால் அதன் அளவு */
+}
+
+/* ஸ்க்ரோல்பார் பின்னணி (Track) */
+::-webkit-scrollbar-track {
+    background: var(--bg-main); 
+}
+
+/* நகரும் பகுதி (Thumb) */
+::-webkit-scrollbar-thumb {
+    background: var(--text-secondary);
+    border-radius: 20px; /* வளைவான அழகான மூலைகள் */
+    border: 2px solid var(--bg-main); /* டிராக்கிற்கும் தம்ப்பிற்கும் நடுவே இடைவெளி */
+}
+
+/* மவுஸ் ஸ்க்ரோல்பார் மீது இருக்கும்போது (Hover எஃபெக்ட்) */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-accent); /* தீம் கலரில் ஒளிரும் */
+}
+
+/* --- 3. மொபைல் பாட்டம் பாரில் வரும் தேவையற்ற ஸ்க்ரோல்களைத் தடுக்க --- */
+.premium-bottom-bar {
+    overflow: hidden !important; /* பாட்டம் பாருக்குள் எந்த ஸ்க்ரோல்பாரும் வராமல் தடுக்கும் */
+    white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Ultra-Premium Snowfall Effect Styles --- */
+#snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1; /* வெப்சைட்டின் கன்டென்ட்டிற்கு பின்புறம் இருக்க (Behind text/buttons) */
+    pointer-events: none; /* பட்டன்கள், லிங்க்குகளை கிளிக் செய்வதில் இடையூறு இல்லாமல் தடுக்க */
+    overflow: hidden;
+}
+
+/* தனித்தனி பனித்துளிகளின் ஸ்டைல் */
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fall linear infinite;
+    opacity: 0.8;
+}
+
+/* Light Mode-இல் பனித்துளிகள் சற்றே சாம்பல் நிறத்தில் தெரிய (வெள்ளை பின்னணியில் தெரியாது என்பதால்) */
+[data-theme="light"] .snowflake {
+    background: rgba(37, 99, 235, 0.25); /* லைட் மூடில் மென்மையான ப்ளூ கலர் பனித்துளிகள் */
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.1);
+}
+
+/* Dark Mode-இல் தூய வெள்ளை நிற பனித்துளிகள் */
+[data-theme="dark"] .snowflake {
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* பனித்துளி கீழே விழும் அனிமேஷன் மற்றும் லைட்டாக பக்கவாட்டில் அசையும் எஃபெக்ட் */
+@keyframes fall {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(105vh) translateX(50px);
+        opacity: 0;
+    }
+}
