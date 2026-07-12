@@ -159,42 +159,127 @@
         </div>
     </section>-->
 
-    <!-- Certifications Section -->
+   <!-- Certifications Section -->
     <section id="certifications" class="py-6 bg-gradient-section">
         <div class="container">
             <div class="text-center mb-5">
                 <div class="section-tag mx-auto">Achievements</div>
                 <h2 class="fw-bold display-6">Certifications & Awards</h2>
+                <p class="text-secondary-custom small">Click on any certificate to view the official document</p>
             </div>
             
             <div class="row g-4">
+                <!-- Certificate 1 Card -->
                 <div class="col-md-4">
-                    <div class="cert-modern-card">
-                        <div class="cert-icon-box"><i class="bi bi-cpu"></i></div>
-                        <h5 class="fw-bold">Computer Systems & Hardware</h5>
-                        <span class="badge-status">Distinction</span>
-                        <div class="cert-footer">ORION International Campus • 2025</div>
+                    <div class="cert-modern-card" data-bs-toggle="modal" data-bs-target="#certModal1">
+                        <div class="cert-img-preview-box">
+                            <img src="cert1.jpg" alt="Computer Systems & Hardware" class="cert-preview-img">
+                            <div class="cert-overlay-hover">
+                                <i class="bi bi-eye-fill"></i>
+                                <span>View Certificate</span>
+                            </div>
+                        </div>
+                        <div class="cert-body-content">
+                            <span class="badge-status">Distinction</span>
+                            <h5 class="fw-bold cert-title-text">Computer Systems & Hardware</h5>
+                            <div class="cert-footer">ORION International Campus • 2025</div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Certificate 2 Card -->
                 <div class="col-md-4">
-                    <div class="cert-modern-card">
-                        <div class="cert-icon-box"><i class="bi bi-globe-asia-australia"></i></div>
-                        <h5 class="fw-bold">Safe & Legal Migration Session</h5>
-                        <span class="badge-status status-blue">Participant</span>
-                        <div class="cert-footer">ICMPD / SLBFE • 2025</div>
+                    <div class="cert-modern-card" data-bs-toggle="modal" data-bs-target="#certModal2">
+                        <div class="cert-img-preview-box">
+                            <img src="cert2.jpg" alt="Safe & Legal Migration" class="cert-preview-img">
+                            <div class="cert-overlay-hover">
+                                <i class="bi bi-eye-fill"></i>
+                                <span>View Certificate</span>
+                            </div>
+                        </div>
+                        <div class="cert-body-content">
+                            <span class="badge-status status-blue">Participant</span>
+                            <h5 class="fw-bold cert-title-text">Safe & Legal Migration Session</h5>
+                            <div class="cert-footer">ICMPD / SLBFE • 2025</div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Certificate 3 Card -->
                 <div class="col-md-4">
-                    <div class="cert-modern-card">
-                        <div class="cert-icon-box"><i class="bi bi-trophy"></i></div>
-                        <h5 class="fw-bold">Inter-University Finance Quiz</h5>
-                        <span class="badge-status status-gold">Acuity Trophy</span>
-                        <div class="cert-footer">University of Kelaniya • 2025</div>
+                    <div class="cert-modern-card" data-bs-toggle="modal" data-bs-target="#certModal3">
+                        <div class="cert-img-preview-box">
+                            <img src="cert3.jpg" alt="Inter-University Finance Quiz" class="cert-preview-img">
+                            <div class="cert-overlay-hover">
+                                <i class="bi bi-eye-fill"></i>
+                                <span>View Certificate</span>
+                            </div>
+                        </div>
+                        <div class="cert-body-content">
+                            <span class="badge-status status-gold">Acuity Trophy</span>
+                            <h5 class="fw-bold cert-title-text">Inter-University Finance Quiz</h5>
+                            <div class="cert-footer">University of Kelaniya • 2025</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ==========================================
+         🚀 3 தனித்தனி பிரீமியம் மோடல்கள் (3 Unique Modals)
+         ========================================== -->
+
+    <!-- Modal 1 -->
+    <div class="modal fade premium-cert-modal" id="certModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header-custom">
+                    <h6 class="modal-title fw-bold text-white text-truncate">Computer Systems & Hardware Certificate</h6>
+                    <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+                <div class="modal-body text-center p-2">
+                    <img src="cert1.jpg" class="img-fluid rounded-3 premium-modal-img" alt="Certificate 1 Zoomed">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade premium-cert-modal" id="certModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header-custom">
+                    <h6 class="modal-title fw-bold text-white text-truncate">Safe & Legal Migration Session Certificate</h6>
+                    <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+                <div class="modal-body text-center p-2">
+                    <img src="cert2.jpg" class="img-fluid rounded-3 premium-modal-img" alt="Certificate 2 Zoomed">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade premium-cert-modal" id="certModal3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header-custom">
+                    <h6 class="modal-title fw-bold text-white text-truncate">Inter-University Finance Quiz Certificate</h6>
+                    <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+                <div class="modal-body text-center p-2">
+                    <img src="cert3.jpg" class="img-fluid rounded-3 premium-modal-img" alt="Certificate 3 Zoomed">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Languages Section -->
     <section class="py-6">
