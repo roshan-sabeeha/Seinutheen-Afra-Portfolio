@@ -515,4 +515,48 @@ html, body {
     90% {
         opacity: 1;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    /* --- மொபைலில் ப்ரொஃபைல் மற்றும் அதன் அனைத்து கன்டெய்னர்களையும் சுருக்க --- */
+@media (max-width: 767.98px) {
     
+    /* 1. வெளிப்புற க்ளோ பாக்ஸை (Wrapper) மொபைலில் 140px ஆகச் சுருக்க */
+    .profile-glow-wrapper {
+        width: 140px !important;
+        height: 140px !important;
+        max-width: 140px !important;
+        min-width: 140px !important;
+        margin: 0 auto 20px auto !important;
+        padding: 0 !important; /* தேவையற்ற ஸ்பேஸ்களை நீக்க */
+    }
+
+    /* 2. உள் இருக்கும் இமேஜ் கன்டெய்னரையும் 140px ஆக்குதல் */
+    .profile-img-container {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 140px !important;
+        max-height: 140px !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        border-radius: 50% !important; /* பாக்ஸ் வட்டமாக மாற */
+    }
+
+    /* 3. இமேஜ் கன்டெய்னருக்குள் கச்சிதமாக அமர */
+    .mobile-hero-avatar {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+        margin: 0 !important;
+    }
+}
