@@ -536,8 +536,8 @@ html, body {
     .profile-glow-wrapper {
         width: 140px !important;
         height: 140px !important;
-        max-width: 140px !important;
-        min-width: 140px !important;
+        max-width: 150px !important;
+        min-width: 150px !important;
         margin: 0 auto 20px auto !important;
         padding: 0 !important; /* தேவையற்ற ஸ்பேஸ்களை நீக்க */
     }
@@ -546,8 +546,8 @@ html, body {
     .profile-img-container {
         width: 100% !important;
         height: 100% !important;
-        max-width: 140px !important;
-        max-height: 140px !important;
+        max-width: 150px !important;
+        max-height: 150px !important;
         padding: 0 !important;
         overflow: hidden !important;
         border-radius: 50% !important; /* பாக்ஸ் வட்டமாக மாற */
