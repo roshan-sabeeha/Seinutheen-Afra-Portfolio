@@ -529,33 +529,32 @@ html, body {
 
 
 
-/* --- மொபைலில் ப்ரொஃபைல் மற்றும் அதன் அனைத்து கன்டெய்னர்களையும் சுருக்க --- */
 @media (max-width: 767.98px) {
     
-    /* 1. வெளிப்புற க்ளோ பாக்ஸை (Wrapper) மொபைலில் 140px ஆகச் சுருக்க */
+    /* 1. வெளிப்புற கன்டெய்னரின் அளவை மாற்ற (Change here) */
     .profile-glow-wrapper {
-        width: 160px !important;
-        height: 160px !important;
-        max-width: 160px !important;
-        min-width: 160px !important;
+        width: 180px !important;       /* 140-க்கு பதிலாக உங்களுக்குத் தேவையான அளவு */
+        height: 180px !important;      /* 140-க்கு பதிலாக உங்களுக்குத் தேவையான அளவு */
+        max-width: 180px !important;   /* 140-க்கு பதிலாக உங்களுக்குத் தேவையான அளவு */
+        min-width: 180px !important;   /* 140-க்கு பதிலாக உங்களுக்குத் தேவையான அளவு */
         margin: 0 auto 20px auto !important;
-        padding: 0 !important; /* தேவையற்ற ஸ்பேஸ்களை நீக்க */
+        padding: 0 !important; 
     }
 
-    /* 2. உள் இருக்கும் இமேஜ் கன்டெய்னரையும் 140px ஆக்குதல் */
+    /* 2. உள் இருக்கும் இமேஜ் கன்டெய்னர் அளவை மாற்ற (Change here) */
     .profile-img-container {
         width: 100% !important;
         height: 100% !important;
-        max-width: 160px !important;
-        max-height: 160px !important;
+        max-width: 180px !important;   /* 140-க்கு பதிலாக உங்களுக்குத் தேவையான அளவு */
+        max-height: 180px !important;  /* 140-க்கு பதிலாக உங்களுக்குத் தேவையான அளவு */
         padding: 0 !important;
         overflow: hidden !important;
-        border-radius: 50% !important; /* பாக்ஸ் வட்டமாக மாற */
+        border-radius: 50% !important; 
     }
 
-    /* 3. இமேஜ் கன்டெய்னருக்குள் கச்சிதமாக அமர */
+    /* 3. இமேஜ் தானாகவே கன்டெய்னர் அளவுக்கு மாறிவிடும் (இதை மாற்ற வேண்டாம் ❌) */
     .mobile-hero-avatar {
-        width: 100% !important;
+        width: 100% !important;        /* இது கன்டெய்னரின் 100% அளவை எடுப்பதால் இதை மாற்றத் தேவையில்லை */
         height: 100% !important;
         object-fit: cover !important;
         display: block !important;
