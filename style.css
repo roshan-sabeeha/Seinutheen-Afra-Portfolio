@@ -525,38 +525,38 @@ html, body {
 
 
 
-    /* --- Ultra-Premium Mobile Responsive Settings for Hero Image --- */
+    /* --- Mobile Responsive: Ultra-Clean Small Profile Image --- */
 @media (max-width: 767.98px) {
-    /* மொபைலில் ஹீரோ செக்ஷன் இமேஜை கச்சிதமான அளவாகக் குறைக்க */
-    .hero-img-wrapper, 
-    .hero-section img, 
-    .profile-img-container { 
-        max-width: 260px !important; /* இமேஜ் அளவை 260px ஆகக் குறைத்துள்ளோம் */
-        height: 260px !important;    /* சதுர அல்லது வட்ட வடிவத்தை கச்சிதமாக வைத்திருக்க */
-        margin: 0 auto 20px auto !important; /* மொபைலில் இமேஜ் நடுவில் (Center) வரவும், அடியில் கச்சிதமான கேப் இருக்கவும் */
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* பிரீமியம் லுக் தரும் ஷேடோ எஃபெக்ட் */
+    /* ப்ரொஃபைல் இமேஜை மட்டும் இன்னும் நல்லா சின்னதாக்க */
+    .hero-section img,
+    .hero-img-wrapper,
+    .profile-img-container,
+    .avatar-bx { 
+        width: 180px !important;      /* இமேஜ் அளவை 180px ஆகக் குறைத்துள்ளோம் */
+        height: 180px !important;     /* கச்சிதமான சிறிய வட்ட வடிவத்திற்கு */
+        max-width: 180px !important;
+        min-width: 180px !important;
+        margin: 10px auto 20px auto !important; /* மேல் இடைவெளியைக் குறைத்து, அடியில் கச்சிதமான கேப் */
     }
 
-    /* ஹீரோ செக்ஷனில் உள்ள உரை மற்றும் பட்டன்கள் மொபைலில் அழகாகத் தெரிய */
+    /* ஹீரோ செக்ஷன் கன்டென்ட் மொபைலில் முன்னுக்குத் தெரிய */
     .hero-section {
-        padding-top: 40px !important;
-        padding-bottom: 40px !important;
-        text-align: center !important; /* மொபைலில் எல்லாவற்றையும் மையப்படுத்த (Center-align) */
+        padding-top: 25px !important;   /* மொபைலில் மேலே உள்ள தேவையற்ற பெரிய கேப் குறையும் */
+        padding-bottom: 30px !important;
+        text-align: center !important;  /* மொபைலில் கன்டென்ட்டை மையப்படுத்த */
     }
 
+    /* எழுத்துக்கள் மற்றும் பட்டன்கள் மொபைல் திரைக்கு ஏற்ப நெருக்கமாக அமையும் */
     .hero-title {
-        font-size: 2.2rem !important; /* மொபைலுக்கு ஏற்ப டைட்டில் அளவு */
-        line-height: 1.3 !important;
-        margin-bottom: 15px !important;
+        font-size: 2rem !important;     /* டைட்டில் அளவு மொபைலுக்குக் கச்சிதமாக இருக்கும் */
+        margin-bottom: 12px !important;
     }
 
     .hero-subtitle {
-        font-size: 1rem !important;
-        margin-bottom: 25px !important;
+        font-size: 0.95rem !important;
+        margin-bottom: 20px !important;
     }
 }
-    100% {
-        transform: translateY(105vh) translateX(50px);
-        opacity: 0;
-    }
-}
+
+
+    
