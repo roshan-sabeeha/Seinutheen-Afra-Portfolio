@@ -524,39 +524,33 @@ html, body {
 
 
 
-
-    /* --- Mobile Responsive: Ultra-Clean Small Profile Image --- */
+/* --- மொபைல் வியூவில் ப்ரொஃபைல் இமேஜை மட்டும் 100% சிறியதாக்க --- */
 @media (max-width: 767.98px) {
-    /* ப்ரொஃபைல் இமேஜை மட்டும் இன்னும் நல்லா சின்னதாக்க */
+    
+    /* ஹீரோ செக்ஷனுக்குள் இருக்கும் ப்ரொஃபைல் படம் மற்றும் அதன் கன்டெய்னர்கள் அனைத்தையும் சுருக்குதல் */
     .hero-section img,
-    .hero-img-wrapper,
-    .profile-img-container,
-    .avatar-bx { 
-        width: 180px !important;      /* இமேஜ் அளவை 180px ஆகக் குறைத்துள்ளோம் */
-        height: 180px !important;     /* கச்சிதமான சிறிய வட்ட வடிவத்திற்கு */
-        max-width: 180px !important;
-        min-width: 180px !important;
-        margin: 10px auto 20px auto !important; /* மேல் இடைவெளியைக் குறைத்து, அடியில் கச்சிதமான கேப் */
+    .hero-img-wrapper img,
+    .profile-img-container img,
+    img[src*="profile"], /* இமேஜ் ஃபைல் பெயரில் profile என்று இருந்தால் */
+    img[src*="avatar"],  /* அல்லது avatar என்று இருந்தால் */
+    .avatar-bx img {
+        width: 140px !important;       /* இமேஜை 140 பிக்சல் அளவிற்கு நன்றாகச் சின்னதாக்கியுள்ளோம் */
+        height: 140px !important;      /* கச்சிதமான சிறிய வட்ட/சதுர வடிவத்திற்கு */
+        max-width: 140px !important;
+        min-width: 140px !important;
+        object-fit: cover !important;
+        margin: 0 auto 15px auto !important; /* மொபைலில் படம் நடுவில் வரவும், அடியில் கச்சிதமான இடைவெளி இருக்கவும் */
+        display: block !important;
     }
 
-    /* ஹீரோ செக்ஷன் கன்டென்ட் மொபைலில் முன்னுக்குத் தெரிய */
-    .hero-section {
-        padding-top: 25px !important;   /* மொபைலில் மேலே உள்ள தேவையற்ற பெரிய கேப் குறையும் */
-        padding-bottom: 30px !important;
-        text-align: center !important;  /* மொபைலில் கன்டென்ட்டை மையப்படுத்த */
-    }
-
-    /* எழுத்துக்கள் மற்றும் பட்டன்கள் மொபைல் திரைக்கு ஏற்ப நெருக்கமாக அமையும் */
-    .hero-title {
-        font-size: 2rem !important;     /* டைட்டில் அளவு மொபைலுக்குக் கச்சிதமாக இருக்கும் */
-        margin-bottom: 12px !important;
-    }
-
-    .hero-subtitle {
-        font-size: 0.95rem !important;
-        margin-bottom: 20px !important;
+    /* படம் இருக்கும் வெளிப்புற திவ் (Div) பகுதியைச் சரிசெய்ய */
+    .hero-img-wrapper, 
+    .profile-img-container, 
+    .avatar-bx {
+        width: 140px !important;
+        height: 140px !important;
+        max-width: 140px !important;
+        margin: 0 auto 15px auto !important;
     }
 }
-
-
     
