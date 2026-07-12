@@ -22,8 +22,8 @@ function updateToggleIcons(theme) {
 }
 
 // Event Listeners for Theme Toggle Buttons
-desktopBtn.addEventListener('click', toggleTheme);
-mobileBtn.addEventListener('click', toggleTheme);
+if (desktopBtn) desktopBtn.addEventListener('click', toggleTheme);
+if (mobileBtn) mobileBtn.addEventListener('click', toggleTheme);
 
 // Initialize application theme state
 const savedTheme = localStorage.getItem('theme') || 'light';
@@ -54,11 +54,6 @@ window.addEventListener('scroll', () => {
         }
     });
 });
-
-
-
-
-
 
 
 // --- Premium Snowfall Generation Engine ---
@@ -93,5 +88,21 @@ function createSnowflake() {
 }
 
 // குறிப்பிட்ட இடைவெளியில் தொடர்ந்து பனித்துளிகளை உருவாக்குதல்
-// (50 பனித்துளிகள் வரை சீராக விழும் படி அமைக்கப்பட்டுள்ளது)
 setInterval(createSnowflake, 150);
+
+
+// --- 🚀 NEW: Refresh Fix Engine (எப்போதும் டாப் ஹோம் செக்ஷனில் வைக்க) ---
+if (history.scrollRestoration) {
+    // பிரௌசர் அதன் பழைய ஸ்க்ரோல் பொசிஷனை ஞாபகம் வைப்பதைத் தடுத்தல்
+    history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    // பக்கம் லோட் ஆனதும் உடனடியாக ஸ்க்ரோலை மேல் பகுதிக்குக் கொண்டு செல்லுதல்
+    window.scrollTo(0, 0);
+    
+    // ஒருவேளை URL-ல் #get-in-touch போன்ற ஹேஷ்டேக் இருந்தால் அதை நீக்குதல்
+    if (window.location.hash) {
+        history.replaceState("", document.title, window.location.pathname + window.location.search);
+    }
+});
