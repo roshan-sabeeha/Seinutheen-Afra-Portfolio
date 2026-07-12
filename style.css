@@ -529,35 +529,48 @@ html, body {
 
 
 
+/* --- மொபைலில் ப்ரொஃபைல் மற்றும் அதன் அனைத்து கன்டெய்னர்களையும் சுருக்க --- */
 @media (max-width: 767.98px) {
     
-    /* 1. வெளிப்புற கன்டெய்னரின் அளவை மாற்ற (Change here) */
+    /* 1. வெளிப்புற க்ளோ பாக்ஸ் (இமேஜின் அடியில் உள்ள கேப்பை 0 ஆக்கியுள்ளோம்) */
     .profile-glow-wrapper {
-        width: 180px !important;       /* 140-க்கு பதிலாக உங்களுக்குத் தேவையான அளவு */
-        height: 180px !important;      /* 140-க்கு பதிலாக உங்களுக்குத் தேவையான அளவு */
-        max-width: 180px !important;   /* 140-க்கு பதிலாக உங்களுக்குத் தேவையான அளவு */
-        min-width: 180px !important;   /* 140-க்கு பதிலாக உங்களுக்குத் தேவையான அளவு */
-        margin: 0 auto 5px auto !important;
+        width: 180px !important;
+        height: 180px !important;
+        max-width: 180px !important;
+        min-width: 180px !important;
+        margin: 0 auto 0px auto !important; /* கேப் 0px */
         padding: 0 !important; 
     }
 
-    /* 2. உள் இருக்கும் இமேஜ் கன்டெய்னர் அளவை மாற்ற (Change here) */
+    /* 2. உள் இருக்கும் இமேஜ் கன்டெய்னர் */
     .profile-img-container {
         width: 100% !important;
         height: 100% !important;
-        max-width: 180px !important;   /* 140-க்கு பதிலாக உங்களுக்குத் தேவையான அளவு */
-        max-height: 180px !important;  /* 140-க்கு பதிலாக உங்களுக்குத் தேவையான அளவு */
+        max-width: 180px !important;
+        max-height: 180px !important;
         padding: 0 !important;
         overflow: hidden !important;
         border-radius: 50% !important; 
+        margin-bottom: 0px !important; /* கன்டெய்னரின் கீழ் மார்ஜினையும் 0 ஆக்கியுள்ளோம் */
     }
 
-    /* 3. இமேஜ் தானாகவே கன்டெய்னர் அளவுக்கு மாறிவிடும் (இதை மாற்ற வேண்டாம் ❌) */
+    /* 3. இமேஜ் */
     .mobile-hero-avatar {
-        width: 100% !important;        /* இது கன்டெய்னரின் 100% அளவை எடுப்பதால் இதை மாற்றத் தேவையில்லை */
+        width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
         display: block !important;
         margin: 0 !important;
+    }
+
+    /* 4. 🚀 புதிய சேர்க்கை: டெக்ஸ்ட்டின் மேல் பகுதியில் இருக்கும் கேப்பை அடியோட குறைக்க */
+    .hero-section h1, 
+    .hero-section h2, 
+    .hero-section h3,
+    .hero-section p,
+    .hero-title,
+    .hero-subtitle {
+        margin-top: 5px !important;    /* இமேஜுக்கு மிக நெருக்கமாக வர 5px அல்லது 0px என மாற்றிப் பாருங்கள் */
+        padding-top: 0px !important;
     }
 }
