@@ -574,3 +574,142 @@ html, body {
         padding-top: 0px !important;
     }
 }
+
+
+
+
+
+
+
+/* --- Ultra-Premium Glassmorphism Certificate Cards --- */
+.cert-modern-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    height: 100%;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.cert-modern-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--primary-accent);
+    box-shadow: 0 20px 40px var(--accent-glow);
+}
+
+/* இமேஜ் ப்ரிவியூ பாக்ஸ் */
+.cert-img-preview-box {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: var(--bg-main);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.cert-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.cert-modern-card:hover .cert-preview-img {
+    transform: scale(1.1);
+}
+
+/* ஹோவர் அனிமேஷன் திரை */
+.cert-overlay-hover {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: #ffffff;
+}
+
+.cert-modern-card:hover .cert-overlay-hover {
+    opacity: 1;
+}
+
+.cert-overlay-hover i {
+    font-size: 2rem;
+    color: var(--primary-accent);
+    margin-bottom: 8px;
+    transform: translateY(10px);
+    transition: 0.3s ease;
+}
+
+.cert-modern-card:hover .cert-overlay-hover i {
+    transform: translateY(0);
+}
+
+.cert-overlay-hover span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* கார்டின் கன்டென்ட் பகுதி */
+.cert-body-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.cert-title-text {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+/* 🚀 Premium Lightbox Modal Style */
+.premium-cert-modal .modal-content {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(15px);
+}
+
+.modal-header-custom {
+    background: linear-gradient(135deg, var(--primary-accent) 0%, #c084fc 100%);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-close-custom {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    line-height: 1;
+}
+
+.btn-close-custom:hover {
+    transform: scale(1.15) rotate(90deg);
+}
+
+.premium-modal-img {
+    max-height: 75vh;
+    object-fit: contain;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
